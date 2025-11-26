@@ -24,15 +24,15 @@ def generate_launch_description():
                 'image_width': 640,
                 'image_height': 480,
                 'pixel_format': 'yuyv',
-                'camera_frame_id': 'camera_optical_frame',
+                'camera_frame_id': 'camera_link_down',
                 'io_method': 'mmap',
                 'framerate': 30.0,
                 'camera_name': 'logitech_c270',
-                'camera_info_url': 'file://' + PathJoinSubstitution([
-                    FindPackageShare('aruco_tracker'), 
-                    'cfg', 
+                'camera_info_url': PathJoinSubstitution([
+                    'package://aruco_tracker',
+                    'cfg',
                     'logitech_c270_calibration.yaml'
-                ]).perform(None)  # We'll create this calibration file
+                ])
             }],
             remappings=[
                 ('/image_raw', '/camera_down/image_raw'),
