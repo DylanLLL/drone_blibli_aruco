@@ -1,0 +1,6 @@
+aruco_tracker:
+  ros__parameters:
+    aruco_id: 0           # The ID of the marker to track (0-49 for DICT_4X4_50)
+    dictionary: 0         # 0 = DICT_4X4_50 (simple and fast)
+    marker_size: 0.15     # Size in meters - MEASURE YOUR PRINTED MARKERS!
+                          # Common sizes: 0.10 (10cm), 0.15 (15cm), 0.20 (20cm)

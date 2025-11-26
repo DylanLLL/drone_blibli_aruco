@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- ArUco Tracker node -->
+  <node pkg="aruco_tracker" exec="aruco_tracker" name="aruco_tracker">
+    <param name="aruco_id" value="0"/>
+    <param name="dictionary" value="2"/>   <!-- DICT_4X4_250 -->
+    <param name="marker_size" value="0.5"/> <!-- Size in meters -->
+  </node>
+
+  <!-- Drift Correction node -->
+  <node pkg="aruco_tracker" exec="drift_correction" name="drift_correction">
+    <param name="desired_distance" value="1.50"/>   <!-- Desired distance in meters -->
+    <param name="correction_speed" value="0.5"/>    <!-- Speed of correction in m/s -->
+    <param name="distance_tolerance" value="0.1"/>  <!-- Tolerance in meters -->
+  </node>
+</launch>

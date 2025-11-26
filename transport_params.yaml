@@ -1,0 +1,10 @@
+dds:
+  domain: 0
+  use_multicast: false
+  participant:
+    rtps:
+      builtin:
+        discovery_config:
+          max_msg_size_no_frag: 65500
+      user_data:
+        max_size: 65500

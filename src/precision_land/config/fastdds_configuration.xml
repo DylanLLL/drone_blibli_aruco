@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dds xmlns="http://www.eprosima.com/XMLSchemas/fastRTPS_Profiles">
+    <profiles>
+        <participant profile_name="precision_land_participant_profile" is_default_profile="true">
+            <rtps>
+                <builtin>
+                    <discovery_config>
+                        <leaseDuration_announcementperiod>
+                            <seconds>3600</seconds>
+                            <nanosec>0</nanosec>
+                        </leaseDuration_announcementperiod>
+                    </discovery_config>
+                    <readerHistoryMemoryPolicy>PREALLOCATED_WITH_REALLOC</readerHistoryMemoryPolicy>
+                    <writerHistoryMemoryPolicy>PREALLOCATED_WITH_REALLOC</writerHistoryMemoryPolicy>
+                </builtin>
+                <name>PrecisionLandParticipant</name>
+                <propertiesPolicy>
+                    <properties>
+                        <property>
+                            <name>dds.builtin.discovery.additional_locators</name>
+                            <value>1</value>
+                        </property>
+                    </properties>
+                </propertiesPolicy>
+            </rtps>
+        </participant>
+
+        <publisher profile_name="precision_land_publisher" is_default_profile="true">
+            <historyMemoryPolicy>PREALLOCATED_WITH_REALLOC</historyMemoryPolicy>
+            <qos>
+                <durability>
+                    <kind>VOLATILE</kind>
+                </durability>
+                <reliability>
+                    <kind>RELIABLE</kind>
+                </reliability>
+                <history>
+                    <kind>KEEP_LAST</kind>
+                    <depth>1</depth>
+                </history>
+                <resource_limits>
+                    <max_samples>100</max_samples>
+                    <allocated_samples>100</allocated_samples>
+                    <max_instances>1</max_instances>
+                    <max_samples_per_instance>100</max_samples_per_instance>
+                </resource_limits>
+            </qos>
+        </publisher>
+
+        <subscriber profile_name="precision_land_subscriber" is_default_profile="true">
+            <historyMemoryPolicy>PREALLOCATED_WITH_REALLOC</historyMemoryPolicy>
+            <qos>
+                <durability>
+                    <kind>VOLATILE</kind>
+                </durability>
+                <reliability>
+                    <kind>RELIABLE</kind>
+                </reliability>
+                <history>
+                    <kind>KEEP_LAST</kind>
+                    <depth>1</depth>
+                </history>
+                <resource_limits>
+                    <max_samples>100</max_samples>
+                    <allocated_samples>100</allocated_samples>
+                    <max_instances>1</max_instances>
+                    <max_samples_per_instance>100</max_samples_per_instance>
+                </resource_limits>
+            </qos>
+        </subscriber>
+    </profiles>
+</dds>
